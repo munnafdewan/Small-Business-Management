@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SmallBusinessManagement.Repository;
-using SmallBusinessManagement.BLL;
 
-
-namespace SmallBusinessManagement.Model
+namespace SmallBusinessManagement.ViewModel
 {
-   public class Product
+   public class ProductView
     {
-        public int Id { get; set; }
-        public int CategoryId { get; set; }
+        public int Serial { get; set; }
+        public string Category { get; set; }
         public string Code { get; set; }
-        public string Name { get; set; }
+        public string Product { get; set; }
         public string ReorderLevel { get; set; }
         public string Description { get; set; }
+        public int Id { get; set; }
     }
 }
