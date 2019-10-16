@@ -9,7 +9,14 @@ using SmallBusinessManagement.BLL;
 
 namespace SmallBusinessManagement.Model
 {
-    class Supplier
+    public class Supplier
     {
+        public int id { set; get; }
+        public int code { set; get; }
+        public string name { set; get; }
+        public string address { set; get; }
+        public string email { set; get; }
+        public string contact { set; get; }
+        public string contactperson { set; get; }
     }
 }
