@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.showDataGirdView = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.showDataGridView = new System.Windows.Forms.DataGridView();
             this.saveButton = new System.Windows.Forms.Button();
             this.loyalityPointTextBox = new System.Windows.Forms.TextBox();
             this.contactTextBox = new System.Windows.Forms.TextBox();
@@ -42,16 +43,40 @@
             this.addressLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.codeLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.showDataGirdView)).BeginInit();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loyalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // showDataGirdView
+            // showDataGridView
             // 
-            this.showDataGirdView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showDataGirdView.Location = new System.Drawing.Point(64, 257);
-            this.showDataGirdView.Name = "showDataGirdView";
-            this.showDataGirdView.Size = new System.Drawing.Size(672, 182);
-            this.showDataGirdView.TabIndex = 27;
+            this.showDataGridView.AutoGenerateColumns = false;
+            this.showDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SL,
+            this.codeDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.contactDataGridViewTextBoxColumn,
+            this.loyalityDataGridViewTextBoxColumn,
+            this.Action});
+            this.showDataGridView.DataSource = this.customerBindingSource;
+            this.showDataGridView.Location = new System.Drawing.Point(12, 257);
+            this.showDataGridView.Name = "showDataGridView";
+            this.showDataGridView.Size = new System.Drawing.Size(847, 182);
+            this.showDataGridView.TabIndex = 27;
+            this.showDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShowDataGridView_CellClick);
+            this.showDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.ShowDataGridView_RowPostPaint);
             // 
             // saveButton
             // 
@@ -159,12 +184,75 @@
             this.codeLabel.TabIndex = 14;
             this.codeLabel.Text = "Code";
             // 
+            // SL
+            // 
+            this.SL.DataPropertyName = "Id";
+            this.SL.HeaderText = "SL";
+            this.SL.Name = "SL";
+            // 
+            // Action
+            // 
+            this.Action.DataPropertyName = "Id";
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // contactDataGridViewTextBoxColumn
+            // 
+            this.contactDataGridViewTextBoxColumn.DataPropertyName = "Contact";
+            this.contactDataGridViewTextBoxColumn.HeaderText = "Contact";
+            this.contactDataGridViewTextBoxColumn.Name = "contactDataGridViewTextBoxColumn";
+            // 
+            // loyalityDataGridViewTextBoxColumn
+            // 
+            this.loyalityDataGridViewTextBoxColumn.DataPropertyName = "Loyality";
+            this.loyalityDataGridViewTextBoxColumn.HeaderText = "Loyality";
+            this.loyalityDataGridViewTextBoxColumn.Name = "loyalityDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(SmallBusinessManagement.Model.Customer);
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(535, 216);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 28;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // CustomerUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.showDataGirdView);
+            this.ClientSize = new System.Drawing.Size(871, 450);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.showDataGridView);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.loyalityPointTextBox);
             this.Controls.Add(this.contactTextBox);
@@ -180,7 +268,9 @@
             this.Controls.Add(this.codeLabel);
             this.Name = "CustomerUi";
             this.Text = "Customer";
-            ((System.ComponentModel.ISupportInitialize)(this.showDataGirdView)).EndInit();
+            this.Load += new System.EventHandler(this.CustomerUi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,7 +278,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView showDataGirdView;
+        private System.Windows.Forms.DataGridView showDataGridView;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TextBox loyalityPointTextBox;
         private System.Windows.Forms.TextBox contactTextBox;
@@ -202,5 +292,15 @@
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label codeLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loyalityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.Button searchButton;
     }
 }

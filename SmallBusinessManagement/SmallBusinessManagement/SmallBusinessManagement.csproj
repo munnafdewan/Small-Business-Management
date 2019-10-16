@@ -105,6 +105,7 @@
     <EmbeddedResource Include="SupplierUi.resx">
       <DependentUpon>SupplierUi.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\SmallBusinessManagement.Model.Customer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
