@@ -17,7 +17,7 @@ namespace SmallBusinessManagement
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CategoryUi());
-            Application.Run(new CategoryUi());
+            Application.Run(new ProductUi());
         }
     }
 }
