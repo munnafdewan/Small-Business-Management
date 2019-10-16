@@ -84,6 +84,7 @@
     <Compile Include="SupplierUi.Designer.cs">
       <DependentUpon>SupplierUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ProductView.cs" />
     <EmbeddedResource Include="CategoryUi.resx">
       <DependentUpon>CategoryUi.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +106,7 @@
     <EmbeddedResource Include="SupplierUi.resx">
       <DependentUpon>SupplierUi.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\SmallBusinessManagement.Model.Category.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
