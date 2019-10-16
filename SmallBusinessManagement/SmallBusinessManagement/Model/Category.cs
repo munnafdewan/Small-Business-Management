@@ -9,7 +9,12 @@ using SmallBusinessManagement.BLL;
 
 namespace SmallBusinessManagement.Model
 {
-    class Category
+   public class Category
     {
+        public int Id { set; get; }
+       
+        public string Code { set; get; }
+        public string Name { set; get; }
+       
     }
 }
