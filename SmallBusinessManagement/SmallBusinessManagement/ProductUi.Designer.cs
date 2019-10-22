@@ -82,7 +82,7 @@
             // 
             // categoryBindingSource
             // 
-            this.categoryBindingSource.DataSource = typeof(SmallBusinessManagement.Model.Category);
+            //this.categoryBindingSource.DataSource = typeof(SmallBusinessManagement.Model.Category);
             // 
             // descriptionLabel
             // 
