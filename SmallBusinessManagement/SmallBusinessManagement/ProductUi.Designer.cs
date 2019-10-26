@@ -62,7 +62,9 @@
             // 
             // showDataGridView
             // 
+            this.showDataGridView.AutoGenerateColumns = false;
             this.showDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showDataGridView.DataSource = this.categoryBindingSource;
             this.showDataGridView.Location = new System.Drawing.Point(39, 290);
             this.showDataGridView.Name = "showDataGridView";
             this.showDataGridView.Size = new System.Drawing.Size(723, 116);
@@ -79,10 +81,6 @@
             this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.categoryComboBox.TabIndex = 22;
             this.categoryComboBox.ValueMember = "ID";
-            // 
-            // categoryBindingSource
-            // 
-            //this.categoryBindingSource.DataSource = typeof(SmallBusinessManagement.Model.Category);
             // 
             // descriptionLabel
             // 
