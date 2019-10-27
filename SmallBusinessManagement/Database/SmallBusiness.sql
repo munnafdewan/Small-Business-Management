@@ -37,7 +37,7 @@ GO
 /****** Object:  Table [dbo].[Products]    Script Date: 10/16/2019 11:32:12 PM ******/
 SET ANSI_NULLS ON
 GO
-//ReportSELECT pu.Date as PurchaseDate ,Categories.Name AS Category, Products.Code ,Products.Name As Product, SUM(pu.Quantity)-(Select Sum(sa.Quantity))As Available ,
+SELECT pu.Date as PurchaseDate ,Categories.Name AS Category, Products.Code ,Products.Name As Product, SUM(pu.Quantity)-(Select Sum(sa.Quantity))As Available ,
 SUM(pu.Quantity)*(SELECT SUM(Pu.UnitPrice) FROM Purchase AS Pu WHERE Pu.ProductId=sa.ProductId
  GROUP BY Pu.ProductId)/COUNT(*) AS CP,
 SUM(sa.Quantity)*(SELECT SUM(Pu.MRP) FROM Purchase AS Pu WHERE Pu.ProductId=sa.ProductId
