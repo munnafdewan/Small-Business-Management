@@ -40,7 +40,7 @@ namespace SmallBusinessManagement.Repository
             }
             catch (Exception exeption)
             {
-
+                
             }
 
             return isAdded;
@@ -129,7 +129,7 @@ namespace SmallBusinessManagement.Repository
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command 
-                string commandString = @"SELECT * FROM Suppliers WHERE Code='" + supplier.email + "'";
+                string commandString = @"SELECT * FROM Suppliers WHERE Email='" + supplier.email + "'";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 //Open
@@ -165,7 +165,7 @@ namespace SmallBusinessManagement.Repository
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command 
-                string commandString = @"UPDATE Suppliers SET Code='" + supplier.code + "',Name= '" + supplier.name + "' , Address = '" + supplier.address + "',Email = '" + supplier.email + "', Contact = '" + supplier.contact + "',ContactPerson=" + supplier.contactperson + " WHERE Id = " + supplier.id + "";
+                string commandString = @"UPDATE Suppliers SET Code='" + supplier.code + "',Name= '" + supplier.name + "' , Address = '" + supplier.address + "',Email = '" + supplier.email + "', Contact = '" + supplier.contact + "',ContactPerson=" + supplier.contactperson + " WHERE Id = " +supplier.id + "";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 //Open
@@ -186,7 +186,7 @@ namespace SmallBusinessManagement.Repository
             {
             }
             return false;
-        }
+         }
 
         public DataTable Display()
         {
@@ -213,7 +213,7 @@ namespace SmallBusinessManagement.Repository
             return dataTable;
 
         }
-        public DataTable Search(string contact,string name,string email)
+        public DataTable Search(string contact, string name, string email)
         {
             DataTable dataTable = new DataTable();
             try
@@ -223,7 +223,7 @@ namespace SmallBusinessManagement.Repository
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command 
-                string commandString = @"SELECT * FROM Suppliers WHERE Name='"+name+"'Or Contact='"+contact+"'Or Email='"+email+"'";
+                string commandString = @"SELECT * FROM Suppliers WHERE Name='" + name + "'Or Contact='" + contact + "'Or Email='" + email + "'";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 //Open
@@ -245,3 +245,4 @@ namespace SmallBusinessManagement.Repository
         }
     }
 }
+

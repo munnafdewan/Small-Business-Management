@@ -12,7 +12,7 @@ namespace SmallBusinessManagement.Model
     public class Supplier
     {
         public int id { set; get; }
-        public int code { set; get; }
+        public string code { set; get; }
         public string name { set; get; }
         public string address { set; get; }
         public string email { set; get; }
